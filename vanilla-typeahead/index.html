@@ -46,6 +46,10 @@
             box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
         }
 
+        #list.hide {
+            display: none;
+        }
+
         li:hover {
             background: darkslategray;
             color: white;
@@ -77,13 +81,9 @@
         <h1>Try Typing...</h1>
         <div class="input-container">
             <input type="text">
-            <ul id="list"></ul>
+            <ul id="list" class="hide"></ul>
         </div>
     </div>
-
 </body>
-
-<script>
-</script>
-
+<script src="index.js"></script>
 </html>
