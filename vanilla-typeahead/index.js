@@ -6,7 +6,6 @@ fetch("https://swapi.co/api/people")
   .then(blob => blob.json())
   .then(data => {
     characters.push(...data.results)
-    // console.log(data)
   })
 
 function render(filtered) {
@@ -22,12 +21,13 @@ function filterText() {
 
   list.innerHTML = ""
   if (search.value === '') {
-    list.classList.add("hide");
+    list.style.display = "none";
+  } else if (filtered.length === 0) {
+    list.innerHTML = "<li style='background:red; color: white;'>Input does not match</li>"
   } else {
-    list.classList.remove("hide");
+    list.style.display = "block";
     render(filtered);
   }
-  // console.log(filtered)
 }
 
 search.addEventListener("keyup", filterText)
